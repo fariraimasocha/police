@@ -53,14 +53,14 @@ const items = [
     icon: Fingerprint,
   },
   {
-    title: "All Offences",
-    url: "/dashboard/offences",
-    icon: Angry,
-  },
-  {
     title: "My Offences",
     url: "/dashboard/my-offences",
     icon: BadgeAlert,
+  },
+  {
+    title: "Record Offence",
+    url: "/dashboard/offences",
+    icon: Angry,
   },
 ];
 

@@ -20,8 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, FileText, AlertTriangle } from "lucide-react";
+import { CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import { UploadButton } from "@/utils/uploadThing";
 
 const clearenceSchema = z.object({
@@ -56,8 +55,6 @@ export default function Clearence() {
       imageName: "",
     },
   });
-
-  // Fetch user's fingerprint data when component mounts
   useEffect(() => {
     if (session?.user?.id) {
       fetchUserFingerprint();
@@ -89,7 +86,6 @@ export default function Clearence() {
     }
   };
 
-  // Verify eligibility when image is uploaded
   const verifyEligibility = async (imageName, imageSize) => {
     if (!userFingerprint) {
       setVerificationStatus({
@@ -103,7 +99,6 @@ export default function Clearence() {
       return;
     }
 
-    // Check if uploaded image matches user's fingerprint image
     const imageMatch =
       userFingerprint.imageName === imageName &&
       userFingerprint.imageSize === imageSize;
