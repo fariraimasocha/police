@@ -7,6 +7,7 @@ import {
   Angry,
   BadgeAlert,
 } from "lucide-react";
+import Link from "next/link";
 
 import {
   Sidebar,
@@ -37,7 +38,7 @@ import { signOut } from "next-auth/react";
 
 const items = [
   {
-    title: "Dashboard",
+    title: "My Dashboard",
     url: "/dashboard",
     icon: Home,
   },
@@ -95,10 +96,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                    <Link href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
